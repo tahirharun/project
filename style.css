@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b3d2e;
+    font-family: 'Amiri', serif;
+}
+h1 {
+    font-size: 6rem;
+    color: #f5d76e;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0;
+    text-align: center;
+}
+@media(max-width: 768px){
+    h1 {
+        font-size: 3rem;
+    }
+}
