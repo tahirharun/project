@@ -1,7 +1,9 @@
+/* General Reset */
 html, body {
     height: 100%;
     margin: 0;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -10,15 +12,39 @@ body {
     font-family: 'Amiri', serif;
     position: relative;
     overflow: hidden;
+    flex-direction: column;
 }
-h1 {
-    font-size: 6rem;
-    color: #f5d76e;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-    margin: 0;
+
+/* Container for text */
+.text-container {
     text-align: center;
     z-index: 2;
 }
+
+/* Welcome Text - Magenta Pink + Floating */
+.welcome {
+    font-size: 4rem;
+    color: #ff4ecf; /* Magenta Pink */
+    margin-bottom: 1rem; /* space above Seerah Day */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6); /* subtle glow */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Seerah Day Text */
+.seerah {
+    font-size: 6rem;
+    color: #f5d76e; /* golden color */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Moon */
 .moon {
     position: absolute;
     width: 420px;
@@ -26,6 +52,7 @@ h1 {
     top: 5%;
     right: 5%;
 }
+
 .moon::before {
     content: "";
     position: absolute;
@@ -35,6 +62,7 @@ h1 {
     border-radius: 50%;
     z-index: 1;
 }
+
 .moon::after {
     content: "";
     position: absolute;
@@ -45,6 +73,8 @@ h1 {
     left: 70px;
     z-index: 2;
 }
+
+/* Star inside moon */
 .star-in-moon {
     position: absolute;
     width: 40px;
@@ -61,13 +91,20 @@ h1 {
     animation: twinkle-star 2s infinite alternate;
     z-index: 3;
 }
+
 @keyframes twinkle-star {
     0%   { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
     50%  { opacity: 1;   transform: translate(-50%, -50%) scale(1.1); }
     100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
 }
-@media(max-width: 768px){
-    h1 {
+
+/* Mobile Responsive */
+@media(max-width: 768px) {
+    .welcome {
+        font-size: 2rem;
+    }
+
+    .seerah {
         font-size: 3rem;
     }
 
